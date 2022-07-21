@@ -13,7 +13,8 @@ import { FeedbackService } from '../services/feedback.service';
 
 
 export class MouseComponent implements OnInit {
-
+  title='Crear elemento';
+  id?: number;
   formMouse: FormGroup|undefined;
 
   constructor(
@@ -34,7 +35,9 @@ export class MouseComponent implements OnInit {
     this.activeRoute.params.subscribe({
       next:(p) =>{
         if(p['id']){
-          
+          this.title='Modificar elemento';
+          this.id=p['id'];
+          this.getData();
         }
       }
     })
@@ -46,11 +49,26 @@ export class MouseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  getData(){
+    this.feed.loading.next(true);
+    this.mousesrv.getMouse(this.id!).subscribe({
+      next: (item)=>{
+        this.feed.loading.next(false);
+        this.formMouse?.patchValue(item);
+      },
+      error:()=>{
+        this.feed.loading.next(false);
+        this.feed.showMessage('No se pudo cambiar el elemento');
+      }
+    })
+  }
+
   save(){
     const data = this.formMouse?.value as Mouse;
     this.feed.loading.next(true);
 
-    this.mousesrv.saveMouse(data).subscribe({
+    this.mousesrv.saveMouse(data,this.id).subscribe({
       next:()=>{
         this.feed.loading.next(false);
         this.router.navigate(['home'])

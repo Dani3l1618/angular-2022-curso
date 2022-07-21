@@ -17,7 +17,16 @@ export class MouseService {
   getMouse(id:number){
     return this.http.get<Mouse>(`${environment.apiUrl}/mouse/${id}`);
   }
-  saveMouse(data:Mouse){
+  saveMouse(data:Mouse,id?:number){
+   
+    if(id){
+      return this.http.put(`${environment.apiUrl}/mouse/${id}`,data);
+    }
+
     return this.http.post(`${environment.apiUrl}/mouse/`,data);
+  }
+
+  deleteMouse(id:number){
+    return this.http.delete(`${environment.apiUrl}/mouse/${id}`);
   }
 }

@@ -14,7 +14,7 @@ import { FeedbackService } from '../services/feedback.service';
 export class HomeComponent implements OnInit {
 
   dataMouse = new MatTableDataSource<Mouse>();
-  displayedColumns = ["id", "brand", "model","type", "year"];
+  displayedColumns = ["id", "brand", "model","type", "year","actions"];
 
   constructor(private mosesrv: MouseService, private feed: FeedbackService) {
 
@@ -32,6 +32,19 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  deleteItem(item: Mouse){
+    if(item.id){
+    this.feed.loading.next(true);
+
+    this.mosesrv.deleteMouse(item.id).subscribe({
+      next:()=>{
+        this.feed.loading.next(false);
+
+      }
+    })
+  }
+
+  }
   ngOnInit(): void {
   }
 

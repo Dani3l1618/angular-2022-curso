@@ -8,11 +8,18 @@
       "year": 2022
     },
     {
-      "brand": "DQST",
-      "model": "Mouse Vertical",
-      "type": "Ergonómico",
-      "year": 2018,
-      "id": 2
+      "brand": "Logitec",
+      "model": "A-5RQ",
+      "type": "Game",
+      "year": 2022,
+      "id": 3
+    },
+    {
+      "brand": "Mobo",
+      "model": "XPR-56",
+      "type": "Escritorio",
+      "year": 2019,
+      "id": 4
     }
   ]
 }
