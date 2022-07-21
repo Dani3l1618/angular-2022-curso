@@ -1,0 +1,18 @@
+{
+  "mouse": [
+    {
+      "id": 1,
+      "brand": "Logitec",
+      "model": "A5RQ",
+      "type": "Gamer",
+      "year": 2022
+    },
+    {
+      "brand": "DQST",
+      "model": "Mouse Vertical",
+      "type": "Ergonómico",
+      "year": 2018,
+      "id": 2
+    }
+  ]
+}

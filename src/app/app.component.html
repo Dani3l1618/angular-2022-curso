@@ -1,3 +1,12 @@
+<mat-toolbar color="primary">
+    <span> Curso Angular 2022</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="logout()"  *ngIf="isLogged">
+        <mat-icon color="primary">logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+
 <mat-progress-bar mode="indeterminate" *ngIf="isloading"></mat-progress-bar>
 <router-outlet></router-outlet>
 

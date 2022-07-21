@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { LoginService } from '../api/login.service';
 import { LoginRequest, LoginResponse } from '../model/login.model';
 import { FeedbackService } from '../services/feedback.service';
+import { LocalService } from '../services/local.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private loginsv: LoginService,
-    private feedback: FeedbackService
+    private feedback: FeedbackService,
+    private loaclsvc: LocalService,
+    private router: Router
   ) { 
     this.formLogin = this.fb.group({
       email: ['',[Validators.required,Validators.email]],
@@ -33,8 +37,14 @@ export class LoginComponent implements OnInit {
       next: (response: LoginResponse)=>{
         
         console.log(response);
+
+        this.loaclsvc.saveToken(response.token);//guardamos el token ver services
+        this.loaclsvc.userAuthenticated.next(true);
+
         this.feedback.loading.next(false);// el loading esta inactivo
         this.isLoading=false;
+
+        this.router.navigate(['home']);
       },
       error: (err) =>{
         this.feedback.loading.next(false);// el loading esta inactivo
