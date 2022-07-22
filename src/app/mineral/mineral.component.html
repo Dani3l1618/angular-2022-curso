@@ -1,1 +1,40 @@
-<p>mineral works!</p>
+<div class="mineral-container" *ngIf="forMineral" [formGroup]="forMineral">
+    <h1>{{title}}</h1>
+
+    <mat-form-field appearance="fill">
+        <mat-label> Nombre</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label> Formula Química</mat-label>
+        <input matInput formControlName="formula">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label> Sistema Cristalino</mat-label>
+        <input matInput formControlName="crystal">
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="fill">
+        <mat-label> Dureza</mat-label>
+        <input type="number" matInput formControlName="mohs">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label> Densidad</mat-label>
+        <input type="number" matInput formControlName="density">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="forMineral.invalid" (click)="save()">
+        Guardar
+    </button>
+
+
+</div>

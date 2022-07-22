@@ -14,7 +14,6 @@ import { MineralComponent } from './mineral/mineral.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MineralComponent,
   ],
   imports: [
     BrowserModule,

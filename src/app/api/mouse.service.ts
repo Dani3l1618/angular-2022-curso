@@ -17,6 +17,7 @@ export class MouseService {
   getMouse(id:number){
     return this.http.get<Mouse>(`${environment.apiUrl}/mouse/${id}`);
   }
+  
   saveMouse(data:Mouse,id?:number){
    
     if(id){

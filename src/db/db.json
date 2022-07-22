@@ -22,16 +22,51 @@
       "id": 5
     }
   ],
-  "minerales":[
+  "minerales": [
     {
-        "id":1,
-        "name": "Pirita",
-        "formula": "FeS2",
-        "category": "Sulfuros",
-        "crystal": "Cúbico",
-        "mohs": 6,
-        "density": 4.9
-
+      "id": 1,
+      "name": "Pirita",
+      "formula": "FeS2",
+      "category": "Sulfuros",
+      "crystal": "Cúbico",
+      "mohs": 6,
+      "density": 4.9
+    },
+    {
+      "name": "Cuarzo",
+      "formula": "SiO2",
+      "category": "Silicato",
+      "crystal": "Trigonal",
+      "mohs": 7,
+      "density": 2.65,
+      "id": 2
+    },
+    {
+      "name": "Talco",
+      "formula": "Mg3Si4O10(OH)2",
+      "category": "Filosilicato",
+      "crystal": "Monoclínico",
+      "mohs": 1,
+      "density": 2.7,
+      "id": 3
+    },
+    {
+      "name": "Yeso",
+      "formula": "CaSO4·2H2O",
+      "category": "Sulfato",
+      "crystal": "Monoclínico",
+      "mohs": 2,
+      "density": 2.31,
+      "id": 4
+    },
+    {
+      "name": "Diamante",
+      "formula": "C",
+      "category": "No metálico",
+      "crystal": "Cúbico",
+      "mohs": 10,
+      "density": 3.5,
+      "id": 5
     }
   ]
 }

@@ -13,4 +13,20 @@ export class MineralsService {
   getMinerales(){
     return this.http.get<Mineral[]>(`${environment.apiUrl}/minerales`);
   }
+
+  getMineral(id:number){
+    return this.http.get<Mineral>(`${environment.apiUrl}/minerales/${id}`);
+  }
+
+  saveMineral(data:Mineral,id?:number){
+    if(id){
+      return this.http.put(`${environment.apiUrl}/minerales/${id}`,data);
+    }
+
+    return this.http.post(`${environment.apiUrl}/minerales/`,data);
+  }
+
+  deleteMineral(id:number){
+    return this.http.delete(`${environment.apiUrl}/minerales/${id}`);
+  }
 }

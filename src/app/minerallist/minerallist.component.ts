@@ -37,7 +37,23 @@ export class MinerallistComponent implements OnInit {
       })
     }
 
-deleteItem(item:Mineral){}
+deleteItem(item:Mineral){
+  if(item.id){
+    this.feed.loading.next(true);
+
+    this.minsrv.deleteMineral(item.id).subscribe({
+      next:()=>{
+        this.feed.loading.next(false);
+        this.loadData();
+
+      },
+      error:()=>{
+        this.feed.loading.next(false);
+        this.feed.showMessage('Lo sentimos, no se pudo eliminar el elemento');
+      }
+    })
+  }
+}
   ngOnInit(): void {
   }
 
