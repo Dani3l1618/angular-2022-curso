@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MouseComponent } from '../mouse/mouse.component';
+import { GuardService } from '../services/guard.service';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   {
     path:'',
-    component: HomeComponent
-
+    component: HomeComponent,
   },
   {
-    path: 'mouse/:id',
-    component: MouseComponent,
+    path:'mouselist',
+    canActivate: [GuardService], //permite la validacion
+    loadChildren: ()=> import('./../mouselist/mouselist.module').then((m)=>m.MouselistModule),
+ 
   },
   {
-    path: 'mouse',
-    component: MouseComponent,
+    path:'minerallist',
+    canActivate: [GuardService], //permite la validacion
+    loadChildren:()=> import('./../minerallist/minerallist.module').then((m)=>m.MinerallistModule),
+ 
   }
 ];
 

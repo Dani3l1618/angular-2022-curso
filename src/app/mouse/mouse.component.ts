@@ -71,7 +71,7 @@ export class MouseComponent implements OnInit {
     this.mousesrv.saveMouse(data,this.id).subscribe({
       next:()=>{
         this.feed.loading.next(false);
-        this.router.navigate(['home'])
+        this.router.navigate(['home/mouselist'])
       },
       error:()=>{
         this.feed.loading.next(false);

@@ -1,7 +1,23 @@
-table{
-    width: 100%;
-}
-button{
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
+
+.mouse-card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100;
+    width: 35%;
+    flex-direction: column;
+    
+
+  }
+
+  .mineral-card {
+    margin-left: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 120;
+    width: 40%;
+    flex-direction:column;
+    
+
+  }

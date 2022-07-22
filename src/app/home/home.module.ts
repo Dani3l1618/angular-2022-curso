@@ -3,26 +3,30 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import {MatTableModule} from '@angular/material/table';
-import { MouseComponent } from '../mouse/mouse.component';
-import { MatInputModule } from '@angular/material/input';
+import { MouselistComponent } from '../mouselist/mouselist.component';
 import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MinerallistComponent } from '../minerallist/minerallist.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    MouseComponent,],
+    MouselistComponent,
+    MinerallistComponent,
+   
+    ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatTableModule
+
+    
   ]
 })
 export class HomeModule { }

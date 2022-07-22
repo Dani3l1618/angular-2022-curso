@@ -1,16 +1,9 @@
 {
   "mouse": [
     {
-      "id": 1,
-      "brand": "Logitec",
-      "model": "A5RQ",
-      "type": "Gamer",
-      "year": 2022
-    },
-    {
       "brand": "Logitec",
       "model": "A-5RQ",
-      "type": "Game",
+      "type": "Gamer",
       "year": 2022,
       "id": 3
     },
@@ -20,6 +13,25 @@
       "type": "Escritorio",
       "year": 2019,
       "id": 4
+    },
+    {
+      "brand": "Razer",
+      "model": "Viper Mini",
+      "type": "Gamer",
+      "year": 2020,
+      "id": 5
+    }
+  ],
+  "minerales":[
+    {
+        "id":1,
+        "name": "Pirita",
+        "formula": "FeS2",
+        "category": "Sulfuros",
+        "crystal": "Cúbico",
+        "mohs": 6,
+        "density": 4.9
+
     }
   ]
 }
